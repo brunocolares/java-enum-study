@@ -4,6 +4,7 @@ import java.util.Date;
 
 import entities.Order;
 import entities.enums.DiaDaSemana;
+import entities.enums.Moeda;
 import entities.enums.OrderStatus;
 
 public class Program {	
@@ -17,6 +18,10 @@ public class Program {
 		/* Testes do enum de dia da semana semana */
 		for(DiaDaSemana diaDaSemana : DiaDaSemana.values()) {
 			System.out.println(diaDaSemana + "=" + diaDaSemana.getNumeroDoDia());
-		}		
+		}	
+		
+		/* Testes enum da moeda */
+		Moeda moeda = Moeda.DOLAR;
+		System.out.println(moeda.converter(100));
 	}
 }
