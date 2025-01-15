@@ -2,10 +2,12 @@ package application;
 
 import java.util.Date;
 
+import entities.Equipamento;
 import entities.Order;
 import entities.enums.DiaDaSemana;
 import entities.enums.Moeda;
 import entities.enums.OrderStatus;
+import entities.enums.SituacaoEquipamento;
 
 public class Program {	
 	public static void main(String args[]) {
@@ -23,5 +25,16 @@ public class Program {
 		/* Testes enum da moeda */
 		Moeda moeda = Moeda.DOLAR;
 		System.out.println(moeda.converter(100));
+		
+		/* Testes enum com situação do Equipamento */
+		
+		SituacaoEquipamento situacaoEquipamento = SituacaoEquipamento.EM_USO;
+		Equipamento equipamento = new Equipamento("5189156", "TRA.092", situacaoEquipamento);
+		
+		String situacaoDesejada = "RECUSADO";
+		Equipamento equipamento2 = new Equipamento("2341841", "CHA.077", SituacaoEquipamento.valueOf(situacaoDesejada));
+		System.out.println("Equipamento 1: "+equipamento);
+		System.out.println("Equipamento 2: "+equipamento2);
+		
 	}
 }
